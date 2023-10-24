@@ -299,6 +299,7 @@ p {
 
                 <p>Publisher links are often <span class="nf">non-free</span>. Links to <span class="free">free</span> preprints and e-prints are included where available. Presentation slides and other <span class="aux">extra materials</span> are sometimes included.</p>
 
+
                 <ul class="vert">
         
         <li>
@@ -330,61 +331,10 @@ p {
 			<a class="buttan free" href="https://eprint.iacr.org/2022/1056">IACR ePrint</a>
 		</li>
 
-		<li>
-                <strong>DualDory: Logarithmic-verifier linkable ring signatures through preprocessing</strong>. <br>
-		Jonathan Bootle, Kaoutar Elkhiyaoui, Julia Hesse and Yacov Manevich.<br>
-            <a class="buttan nf" href="https://link.springer.com/chapter/10.1007/978-3-031-17146-8_21">ESORICS 2022</a><br>
-            <a class="buttan free" href="https://eprint.iacr.org/2023/1177">IACR ePrint</a>
-		</li>
+                </ul>
 
-		<li>
-                <strong>Gemini: Elastic SNARKs for Diverse Environments</strong>. <br>
-		Jonathan Bootle, Alessandro Chiesa, Yuncong Hu and Michele Orr&ugrave;. <br>
-			<a class="buttan nf" href="https://link.springer.com/chapter/10.1007/978-3-031-07085-3_15">EUROCRYPT 2022</a><br>
-			<a class="buttan free" href="https://eprint.iacr.org/2022/420">IACR ePrint</a>
-			<a class="buttan aux" href="https://iacr.org/submit/files/slides/2022/eurocrypt/eurocrypt2022/141/slides.pdf">Slides</a>
-			<a class="buttan aux" href="https://www.youtube.com/watch?v=Suv7MN131f8">Video</a>
-			<a class="buttan aux" href="https://www.youtube.com/watch?v=9tvO30SVGYw">Video</a>
-		</li>
-
-		<li>
-                <strong>Zero-Knowledge IOPs with Linear-Time Prover and Polylogarithmic-Time Verifier</strong>. <br>
-		Jonathan Bootle, Alessandro Chiesa and Siqi Liu.<br>
-			<a class="buttan nf" href="https://link.springer.com/chapter/10.1007/978-3-031-07085-3_10">EUROCRYPT 2022</a><br>
-                	<a class="buttan free" href="https://eprint.iacr.org/2020/1527">IACR ePrint</a>
-				<a class="buttan aux" href="https://iacr.org/submit/files/slides/2022/eurocrypt/eurocrypt2022/101/slides.pdf">Slides</a>
-				<a class="buttan aux" href="https://www.youtube.com/watch?v=3AGLkyIPWBc&list=PLeeS-3Ml-rpo46w2onH4CGzlHZ8uwa1w5&index=55">Video</a>
-				<a class="buttan aux" href="https://www.youtube.com/watch?v=3JM5JKWdgDA&feature=youtu.be">Video</a>
-		</li>
-
-		<li>
-                <strong> More Efficient Amortization of Exact Zero-Knowledge Proofs for LWE</strong>. <br>
-		Jonathan Bootle, Vadim Lyubashevsky, Ngoc Khanh Nguyen and Gregor Seiler.<br>
-		<a class="buttan nf" href="https://link.springer.com/chapter/10.1007/978-3-030-88428-4_30">ESORICS 2021</a><br>
-                	<a class="buttan free" href="https://eprint.iacr.org/2020/1449">IACR ePrint</a>
-				<a class="buttan aux" href="./PresentationSlides/esorics2021.pdf">Slides</a>
-		</li>
-
-		<li>
-                <strong>Sumcheck Arguments and their Applications</strong>. <br>
-		Jonathan Bootle, Alessandro Chiesa and Katerina Sotiraki.<br>
-			<a class="buttan nf" href="https://link.springer.com/chapter/10.1007/978-3-030-84242-0_26">CRYPTO 2021</a><br>
-                	<a class="buttan free" href="https://eprint.iacr.org/2021/333">IACR ePrint</a>
-			<a class="buttan aux" href="./PresentationSlides/zkstudyclub2021.pdf">Slides</a>
-			<a class="buttan aux" href="https://www.youtube.com/watch?v=FFejMepKndw&list=PLj80z0cJm8QHm_9BdZ1BqcGbgE-BEn-3Y&index=1">Video</a>
-		</li>
-
-		<li>
-                <strong>Linear-Time Arguments with Sublinear Verification from Tensor Codes</strong>. <br>
-		Jonathan Bootle, Alessandro Chiesa and Jens Groth.<br>
-			<a class="buttan nf" href="https://link.springer.com/chapter/10.1007/978-3-030-64378-2_2">TCC 2020</a><br>
-                	<a class="buttan free" href="https://eprint.iacr.org/2020/1426">IACR ePrint</a>
-			<a class="buttan aux" href="./PresentationSlides/tcc2020.pdf">Slides</a>
-			<a class="buttan aux" href="https://www.youtube.com/watch?v=X4XI2t-XSVs">Video</a>
-		</li>
-
-    </ul>
-
-</div>
-
+            </div>
 </html>
+
+           
+
