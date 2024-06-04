@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    Modified by Robert Gorwa - publication formatting from Jonathan Bootle
+    https://github.com/mavroudisv/plain-academic
+-->
+
+
+<style>
+a.buttan:link, a.buttan:visited{
+    color: black;
+    padding: 0px 3px;
+    margin: 1px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid black;
+    position:relative;
+}
+
+a.nf:link, a.nf:visited, .nf {
+    background-color: #f1c3d9;
+}
+a.nf:hover, a.nf:active {
+    background-color: #d2acbe;
+}
+a.free:link, a.free:visited, .free {
+    background-color: #89eacd;
+}
+a.free:hover, a.free:active, {
+    background-color: #89C5EA;
+}
+a.talk:link, a.talk:visited, .talk {
+    background-color: #89C5EA;
+}
+a.talk:hover, a.talk:active, {
+    background-color: #89C5EA;
+}
+a.aux:link, a.aux:visited, .aux {
+    background-color: #A08E7A;
+    color: white;
+}
+a.aux:hover, a.aux:active {
+    background-color: #A08E7A;
+}
+ul.vert {
+    border-left: 0px solid red;
+    background-color: #f1f1f1;
+    list-style-type: none;
+}
+ul.vert >li {
+    border-left: 10px solid #d1d1d1;
+    background-color: #f1f1f1;
+    list-style-type: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    margin-left: -45px;
+}
+a.buttan:after{
+    padding: 5px;
+    display:none;
+    position: absolute;
+    text-align: center;
+    color: #111111;
+    top:-30px;
+    right:30px;
+    width:200px;
+    background-color: #fef4c5;
+    border: 1px solid #d4b943;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+	z-index: 98;
+}
+a.buttan:hover:after{
+    display: block;
+}
+
+h2 {
+    font-weight: 100;
+}
+
+/* LAYOUT CSS */
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+#layout {
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
+.sidebar {
+    background: rgb(61, 79, 93);
+    color: #fff;
+}
+
+.brand-title,
+.brand-tagline {
+    margin: 0;
+}
+.brand-tagline {
+    font-weight: 300;
+    color: rgb(176, 202, 219);
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav-item {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.nav-item a {
+    background: transparent;
+    border: 2px solid rgb(176, 202, 219);
+    color: #fff;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 85%;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+    border: 2px solid rgb(61, 146, 201);
+    text-decoration: none;
+}
+
+.content-subhead {
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.content {
+    padding: 2em 1em 0;
+}
+
+.post {
+    padding-bottom: 2em;
+}
+.h2 {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 0.2em;
+}
+
+p {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    line-height: 1.8em;
+}
+.post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
+
+.post-category {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+}
+    .post-category-design {
+        background: #5aba59;
+    }
+    .post-category-pure {
+        background: #4d85d1;
+    }
+    .post-category-yui {
+        background: #8156a7;
+    }
+    .post-category-js {
+        background: #df2d4f;
+    }
+
+.post-images {
+    margin: 1em 0;
+}
+.post-image-meta {
+    margin-top: -3.5em;
+    margin-left: 1em;
+    color: #fff;
+    text-shadow: 0 1px 1px #333;
+}
+
+.footer {
+    text-align: center;
+    padding: 1em 0;
+}
+.footer a {
+    color: #ccc;
+    font-size: 80%;
+}
+.footer .pure-menu a:hover,
+.footer .pure-menu a:focus {
+    background: none;
+}
+
+@media (min-width: 48em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 25%;
+    }
+
+    .header {
+        margin: 80% 2em 0;
+        text-align: right;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+    .nav-item {
+    display:block;    
+    }
+
+}
+
+
+</style>
+
+  <link rel="stylesheet" href="pure-min.css">
+  <link rel="stylesheet" href="grids-responsive-min.css">
+
+<html lang="en">
+<head>
+  <title>Robert Gorwa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Contact Info on the Sidebar -->
+            <div class="col-md-3 col-xs-12">
+                <div style="word-wrap: break-word; font-family: 'Roboto', sans-serif; font-size: 38px;"><b>Robert Gorwa</b></div><br>
+                <div class="row"> <div class="col-md-10 col-xs-6"> <img class="img-responsive" src="img/headshot.png" alt=""> </div></div><br>
+                <div><strong>WZB Berlin Social Science Center</strong><br> </div>
+		<div><a href="index.html">Home</a><br></div>
+                                      </div>
+            <!-- Entries Column -->
+            <div class="col-md-8 col-xs-12">
+                <div class="col" style="margin-top:3%; text-align:justify; font-size: 16px">               					
+                    <h1>The Politics of Platform Regulation</h1>
+					<h3>Published in Spring/Summer 2024 by Oxford University Press.</h3>
+
+                    <div>
+                        <ul>
+                          <li><a href="https://global.oup.com/academic/product/the-politics-of-platform-regulation-9780197692868?prevNumResPerPage=20&prevSortField=1&sortField=8&resultsPerPage=20&start=0&lang=en&cc=us#">Order a physical copy from OUP</a></li>
+                          <li><a href="https://academic.oup.com/book/56385">Free open access PDF from OUP Academic</a></li>
+                          <li><a href="https://www.youtube.com/watch?v=T8D8kBgNOcs&pp=ygUQdWNsIHJvYmVydCBnb3J3YQ%3D%3D">Video of book talk at University College London</a></li>
+
+                        </ul>
+                      </div>
+
+					<p>Leading multinational technology companies like Alphabet, Meta, Twitter, TikTok, and Microsoft now operate sprawling, complex systems to govern online behavior. These technical and bureaucratic infrastructures, commonly termed "content moderation" or "trust and safety," were developed in an effort to keep illegal and harmful material--such as child abuse imagery, hate speech, and incitement to extremist violence--out of sight and out of mind. But recently, they have been mired with scandal, and increasingly are in the public crosshairs. </p>
+                  
+                    <p> In <i>The Politics of Platform Regulation: How Governments Shape Online Content Moderation </i>, Robert Gorwa outlines how governments are shaping the emerging space of online safety. Through case studies from Germany, the United States, New Zealand, and Australia, and insights gleaned from ongoing policy debates in Brazil, India, and China, Gorwa explores the domestic and international politics that influence how, why, and when platform regulation comes into being. Going beyond existing work that explores the hidden private rules and practices increasingly shaping our online lives, <i>The Politics of Platform Regulation</i> is a measured empirical and theoretical account of how the state is pushing back.</p>
+
+                    <img src="img/cover-snippet.jpg">
+
+                    <h3>Generous Blurbs from Colleagues + Mentors</h3>
+                    <p>"Gorwa not only documents the growing effort to regulate social media platforms, he shines a light on how and why states endeavor to pressure or persuade platforms to govern in particular ways. Combining a clear conceptual framework and carefully examined case studies, he reveals the decisions to intervene, the forms those interventions take, and the political will and circumstances necessary to pursue them. It's a sharp and important work." -- Tarleton Gillespie, Author of <i>Custodians of the Internet</i></p>
+                    <p>"Robert Gorwa's outstanding book gives us a novel and hugely helpful framework for identifying why and how battles over platform regulation unfold as they do. His cases confirm that political will and power are key salient factors in whether governments intervene to limit big tech power and the consequences for fairness and transparency. This is a must-read for everyone who cares about the future of platformisation." -- Robin Mansell, Professor Emerita, London School of Economics and Political Science</p>
+                    <p>"<i>The Politics of Platform Regulation</i> arrives at a critical juncture in the ongoing discussion on platform regulation... Robert Gorwa presents an urgently needed and innovative approach to studying platform governance from a political science standpoint --- the first book of this kind." -- Yannis Theocaris, Professor of Digital Governance, Technical University of Munich</p>
+                    <p>"Finally, here is a comprehensive book about platform regulation that explores not just its legal and technical aspects, but also its political dimensions. Robert Gorwa is your sublime guide in a global minefield where platform jurisdictions meet geopolitical contestations. His sharp analytical journey brings you from New Zealand to China, and from Germany to Texas, piecing together a cohesive picture of global platform regulation. A true mind-opener for scholars dying to understand the how, what, and why of platform governance in a digital world." -- José van Dijck, Author of <i>The Culture of Connectivity</i> and co-author of <i>The Platform Society</i></p>
+                    <p>"Gorwa's book is essential reading to understand the complex and rapidly changing international politics at work as governments struggle for influence over global technology companies... It is a much-needed explanation of how, exactly, regulation gets done in the world where the borderless internet was once thought to be immune to the conflicting demands of territorial governments." -- Nicolas Suzor, Author of <i>Lawless: The Secret Rules That Govern our Digital Lives</i></p>
+    
+                </div>
+
+
+
+
+</html>
