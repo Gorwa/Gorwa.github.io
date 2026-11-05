@@ -1,610 +1,623 @@
 <!DOCTYPE html>
-<!--
-    Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
-    Modified by Robert Gorwa - publication formatting from Jonathan Bootle
-    https://github.com/mavroudisv/plain-academic
--->
-
-
-<style>
-a.buttan:link, a.buttan:visited{
-    color: black;
-    padding: 0px 3px;
-    margin: 1px 0px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border: 1px solid black;
-    position:relative;
-}
-
-a.nf:link, a.nf:visited, .nf {
-    background-color: #f1c3d9;
-}
-a.nf:hover, a.nf:active {
-    background-color: #d2acbe;
-}
-a.free:link, a.free:visited, .free {
-    background-color: #89eacd;
-}
-a.free:hover, a.free:active, {
-    background-color: #89C5EA;
-}
-a.talk:link, a.talk:visited, .talk {
-    background-color: #89C5EA;
-}
-a.talk:hover, a.talk:active, {
-    background-color: #89C5EA;
-}
-a.aux:link, a.aux:visited, .aux {
-    background-color: #A08E7A;
-    color: white;
-}
-a.aux:hover, a.aux:active {
-    background-color: #A08E7A;
-}
-ul.vert {
-    border-left: 0px solid red;
-    background-color: #f1f1f1;
-    list-style-type: none;
-}
-ul.vert >li {
-    border-left: 10px solid #d1d1d1;
-    background-color: #f1f1f1;
-    list-style-type: none;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    margin-left: -45px;
-}
-a.buttan:after{
-    padding: 5px;
-    display:none;
-    position: absolute;
-    text-align: center;
-    color: #111111;
-    top:-30px;
-    right:30px;
-    width:200px;
-    background-color: #fef4c5;
-    border: 1px solid #d4b943;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -ms-border-radius: 2px;
-    border-radius: 2px;
-	z-index: 98;
-}
-a.buttan:hover:after{
-    display: block;
-}
-
-h2 {
-    font-weight: 100;
-}
-
-/* LAYOUT CSS */
-.pure-img-responsive {
-    max-width: 100%;
-    height: auto;
-}
-
-#layout {
-    padding: 0;
-}
-
-.header {
-    text-align: center;
-    top: auto;
-    margin: 3em auto;
-}
-
-.sidebar {
-    background: rgb(61, 79, 93);
-    color: #fff;
-}
-
-.brand-title,
-.brand-tagline {
-    margin: 0;
-}
-.brand-tagline {
-    font-weight: 300;
-    color: rgb(176, 202, 219);
-}
-
-.nav-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.nav-item {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-}
-.nav-item a {
-    background: transparent;
-    border: 2px solid rgb(176, 202, 219);
-    color: #fff;
-    margin-top: 1em;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-size: 85%;
-}
-.nav-item a:hover,
-.nav-item a:focus {
-    border: 2px solid rgb(61, 146, 201);
-    text-decoration: none;
-}
-
-.content-subhead {
-    text-transform: uppercase;
-    color: #aaa;
-    border-bottom: 1px solid #eee;
-    padding: 0.4em 0;
-    font-size: 80%;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-}
-
-.content {
-    padding: 2em 1em 0;
-}
-
-.post {
-    padding-bottom: 2em;
-}
-.h2 {
-    font-size: 2em;
-    color: #222;
-    margin-bottom: 0.2em;
-}
-
-p {
-    font-family: Georgia, "Cambria", serif;
-    color: #444;
-    line-height: 1.8em;
-}
-.post-meta {
-    color: #999;
-    font-size: 90%;
-    margin: 0;
-}
-
-.post-category {
-    margin: 0 0.1em;
-    padding: 0.3em 1em;
-    color: #fff;
-    background: #999;
-    font-size: 80%;
-}
-    .post-category-design {
-        background: #5aba59;
-    }
-    .post-category-pure {
-        background: #4d85d1;
-    }
-    .post-category-yui {
-        background: #8156a7;
-    }
-    .post-category-js {
-        background: #df2d4f;
-    }
-
-.post-images {
-    margin: 1em 0;
-}
-.post-image-meta {
-    margin-top: -3.5em;
-    margin-left: 1em;
-    color: #fff;
-    text-shadow: 0 1px 1px #333;
-}
-
-.footer {
-    text-align: center;
-    padding: 1em 0;
-}
-.footer a {
-    color: #ccc;
-    font-size: 80%;
-}
-.footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
-    background: none;
-}
-
-@media (min-width: 48em) {
-    .content {
-        padding: 2em 3em 0;
-        margin-left: 25%;
-    }
-
-    .header {
-        margin: 80% 2em 0;
-        text-align: right;
-    }
-
-    .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-    }
-    .nav-item {
-    display:block;    
-    }
-
-}
-
-
-</style>
-
-  <link rel="stylesheet" href="pure-min.css">
-  <link rel="stylesheet" href="grids-responsive-min.css">
-
 <html lang="en">
 <head>
-  <title>Robert Gorwa</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <meta name="description" content="Robert Gorwa — research on technology, platform governance and global regulation.">
+  <title>Robert Gorwa</title>
+  <style>
+    :root {
+      --sidebar: #3d4f5d;
+      --sidebar-text: #fff;
+      --sidebar-muted: #b0cadb;
+      --text: #333;
+      --muted: #777;
+      --link: #1769aa;
+      --soft-bg: #f1f1f1;
+      --open-access: #89eacd;
+      --publisher: #f1c3d9;
+      --content-width: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #fff;
+      font: 16px/1.75 Arial, Helvetica, sans-serif;
+    }
+    a {
+      color: var(--link);
+      overflow-wrap: anywhere;
+      text-underline-offset: .15em;
+    }
+    a:focus-visible {
+      outline: 3px solid #e5a900;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    .page {
+      width: min(calc(100% - 48px), var(--content-width));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(215px, 265px) minmax(0, 1fr);
+      gap: clamp(32px, 5vw, 64px);
+      align-items: stretch;
+    }
+    .sidebar {
+      align-self: stretch;
+      min-height: 100vh;
+      padding: 42px 24px 32px;
+      background: var(--sidebar);
+      color: var(--sidebar-text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .profile-name {
+      margin: 0 0 20px;
+      color: #fff;
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      line-height: 1.15;
+      overflow-wrap: anywhere;
+    }
+    .headshot {
+      display: block;
+      width: 100%;
+      max-width: 210px;
+      height: auto;
+      margin: 0 0 24px;
+    }
+    .affiliation {
+      margin: 0 0 16px;
+      line-height: 1.5;
+    }
+    .sidebar nav {
+      display: grid;
+      gap: 9px;
+      margin-top: 20px;
+    }
+    .sidebar nav a {
+      display: inline-block;
+      width: fit-content;
+      max-width: 100%;
+      padding: 5px 0;
+      color: #fff;
+    }
+    /* On desktop, use a white sidebar so its background does not need
+       to extend to the full height of a long publication list. */
+    @media (min-width: 721px) {
+      .sidebar {
+        background: #fff;
+        color: var(--text);
+      }
+      .profile-name {
+        color: #222;
+      }
+      .sidebar a,
+      .sidebar nav a {
+        color: var(--link);
+      }
+      .sidebar .affiliation {
+        color: var(--text);
+      }
+    }
+
+    .main-content { min-width: 0; padding: 46px 0 60px; }
+    .intro { margin-bottom: 2.5rem; }
+    .intro p, .publications p { margin: 0 0 1.2rem; }
+    h2, h3 {
+      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.25;
+    }
+    h2 {
+      margin: 2.4rem 0 1rem;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 400;
+    }
+    h3 {
+      margin: 2rem 0 .9rem;
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      font-weight: 600;
+    }
+    .publications {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    .publications p {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .publications > h2:first-child { margin-top: 0; }
+    ul.vert {
+      list-style: none;
+      margin: 0 0 1.8rem;
+      padding: 0;
+    }
+    ul.vert > li {
+      margin: 0 0 12px;
+      padding: 14px 18px;
+      border-left: 6px solid #d1d1d1;
+      background: var(--soft-bg);
+      overflow-wrap: anywhere;
+    }
+    .buttan {
+      display: inline-block;
+      margin: 5px 5px 2px 0;
+      padding: 4px 9px;
+      border: 1px solid rgba(0,0,0,.35);
+      border-radius: 3px;
+      color: #222;
+      font: 0.88rem/1.4 Arial, Helvetica, sans-serif;
+      text-decoration: none;
+      vertical-align: middle;
+    }
+    .buttan:hover, .buttan:focus-visible { filter: brightness(.94); text-decoration: underline; }
+    .free { background: var(--open-access); }
+    .nf { background: var(--publisher); }
+    .talk { background: #89c5ea; }
+    .aux { background: #a08e7a; color: #fff; }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      align-items: center;
+      margin: .5rem 0 1.5rem;
+    }
+    .legend span { padding: 2px 7px; border-radius: 3px; }
+
+    .publication-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 1rem 0 1.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .publication-filter {
+      appearance: none;
+      border: 1px solid #8a969e;
+      border-radius: 3px;
+      background: #fff;
+      color: #31566f;
+      padding: 8px 13px;
+      font: 600 .9rem/1.3 Arial, Helvetica, sans-serif;
+      cursor: pointer;
+    }
+    .publication-filter:hover { background: #f1f4f6; }
+    .publication-filter.is-active {
+      background: #3d4f5d;
+      border-color: #3d4f5d;
+      color: #fff;
+    }
+    .publication-filter:focus-visible {
+      outline: 3px solid #e5a900;
+      outline-offset: 3px;
+    }
+    .latest-publications[hidden] { display: none; }
+
+    img { max-width: 100%; height: auto; }
+    @media (max-width: 720px) {
+      .page {
+        width: min(calc(100% - 32px), 640px);
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+      }
+      .sidebar {
+        min-height: 0;
+        margin-top: 16px;
+        padding: 20px;
+        border-radius: 6px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(90px, 30%);
+        grid-template-areas:
+          "name photo"
+          "affiliation photo"
+          "navigation photo";
+        column-gap: 18px;
+        align-items: start;
+      }
+      .profile-name { grid-area: name; margin-bottom: 10px; font-size: clamp(1.6rem, 7vw, 2rem); }
+      .headshot { grid-area: photo; width: 100%; max-width: 145px; margin: 2px 0 0 auto; }
+      .affiliation { grid-area: affiliation; margin-bottom: 8px; font-size: .95rem; }
+      .sidebar nav {
+        grid-area: navigation;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+        margin-top: 5px;
+      }
+      .sidebar nav a { padding: 4px 0; }
+      .main-content { padding: 30px 0 44px; }
+      .intro { margin-bottom: 2rem; }
+      ul.vert > li { padding: 13px 14px; }
+    }
+    @media (max-width: 390px) {
+      .page { width: min(calc(100% - 24px), 640px); }
+      .sidebar { padding: 16px; grid-template-columns: minmax(0, 1fr) 88px; column-gap: 12px; }
+      body { font-size: 15px; }
+      ul.vert > li { padding: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    /* Dark-page variation: black background throughout, with high-contrast text. */
+    body {
+      background: #000;
+      color: #e8e8e8;
+    }
+    .sidebar { background: #000; color: #e8e8e8; }
+    .profile-name,
+    h2, h3 {
+      color: #f5f5f5;
+    }
+    .sidebar .affiliation,
+    .affiliation {
+      color: #d0d0d0;
+    }
+    a,
+    .sidebar a,
+    .sidebar nav a {
+      color: #78baff;
+    }
+    ul.vert > li {
+      background: #171717;
+      border-left-color: #666;
+      color: #e8e8e8;
+    }
+    .publication-filter {
+      background: #171717;
+      border-color: #777;
+      color: #e8e8e8;
+    }
+    .publication-filter:hover {
+      background: #292929;
+    }
+    .publication-filter.is-active {
+      background: #31566f;
+      border-color: #31566f;
+      color: #fff;
+    }
+    .buttan {
+      border-color: rgba(255,255,255,.4);
+    }
+    .legend span {
+      color: #111;
+    }
+
+  </style>
 </head>
 <body>
+  <div class="page">
+    <aside class="sidebar" aria-label="Author information">
+      <h1 class="profile-name">Robert Gorwa</h1>
+      <img class="headshot" src="img/bpj_cartoon.png" alt="Portrait of Robert Gorwa">
+      <p class="affiliation"><strong>Berlin Social Science Center</strong></p>
+      <nav aria-label="Main navigation">
+        <a href="book.html">Books</a>
+        <a href="bios.html">Bios</a>
+        <a href="mailto:contact@gorwa.ca">Contact</a>
+      </nav>
+    </aside>
 
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-3 col-xs-12">
-                <div style="word-wrap: break-word; font-family: 'Roboto', sans-serif; font-size: 38px;"><b>Robert Gorwa</b></div><br>
-                <div class="row"> <div class="col-md-10 col-xs-6"> <img class="img-responsive" src="img/headshot.png" alt=""> </div></div><br>
-                <div><strong>WZB Berlin Social Science Center</strong><br> </div>
-                <div><a href="book.html">Book</a><br> </div>                    
-                <div><a rel="me" href="social.html">Socials</a><br> </div>
-                <div><a href="bios.html">Bios</a><br> </div> 
-                <div><a href="mailto:contact@gorwa.ca">Contact</a><br> </div>  
-                   
-            </div>
-            <!-- Entries Column -->
-            <div class="col-md-8 col-xs-12">
-                <div class="col" style="margin-top:3%; text-align:justify; font-size: 16px">               
-					<p>Hi! I am a researcher based at the <a href="https://wzb.eu/en/persons/robert-gorwa-0">WZB Berlin Social Science Center</a>. 
+    <main class="main-content">
+      <section class="intro" aria-label="Biography">
+        
+<p>Hi! I am a researcher based at the <a href="https://wzb.eu/en/persons/robert-gorwa-0">WZB Berlin Social Science Center</a>. 
                         
                     <p>(If you're looking for a formal introduction for an event, I suggest that you navigate to my <a href="bios.html">bios page</a>.)</p>
-
-                     <p>My research is at the intersection of technology and global regulation, bridging political science, law, and media studies. I'm conceptually most interested in the politics and institutions that shape public/private governance in the platformized digital economy, with a focus on social networks and AI systems. Empirically, I mainly do qualitative work, with a focus on textual, archival, and interview-based forms of policy tracing and analysis. I collaborate most actively with legal scholars and computer scientists, but also work happily with historians, communications researchers, political economists, and STS scholars.</p>
-                    
-                    <p>I received my doctorate from the <a href="https://www.politics.ox.ac.uk/">Department of Politics and International Relations</a> at the University of Oxford, where my dissertation recieved the Winchester Prize. I previously studied at the <a href="https://www.oii.ox.ac.uk/">Oxford Internet Institute</a> and the <a href="https://ir.arts.ubc.ca/">University of British Columbia</a>, and have conducted research at the <a href="https://reutersinstitute.politics.ox.ac.uk/">Reuters Institute</a> and <a href="https://www.sant.ox.ac.uk/european-studies/european-studies-centre/">European Studies Centre</a> in Oxford as well as the <a href="https://www.mcgill.ca/maxbellschool/">Max Bell School of Public Policy</a> at McGill. I have held fellowships or other visiting positions at the Center for Democracy and Technology (<a href="https://cdt.org/">CDT</a>) in DC, USC's <a href="https://annenberg.usc.edu/">Annenberg School for Communication and Journalism</a>, Stanford's <a href="https://pacscenter.stanford.edu/person/robert-gorwa/">Center for Philanthropy and Civil Society</a>, and the <a href="https://www.weizenbaum-institut.de/portrait/p/robert-gorwa/">Weizenbaum Institute</a> in Berlin. </p>
-                    
-                    <p>My first book, <a href="book.html"><i>The Politics of Platform Regulation</i></a>, a comparative empirical study of the development of 'online safety' frameworks in the transnational context, was  published open access in 2024 by Oxford University Press. My second book, <a href="https://homepages.ucl.ac.uk/~ucqnmve/badcomputers/"><i>Bad Computers</i></a>, an investigation of the logics of governance in the AI stack, is a collaboration with the law and technology scholar Michael Veale and is forthcoming with MIT Press. I co-founded the Platform Governance Research Network (<a href="https://platgov.net">PlatGovNet</a>) and organize a <a href="https://wzb.eu/en/events/seminar-series/platform-politics-and-policy">regular research seminar</a> in Berlin on digital policy issues.</p>
-
-                </div><div class="col-md-8">	
-	    <!-- Old: <div class="col-md-8" style="height: 120vh;"> -->
-		<h2 id="publications">Publications</h2>
-            
-<p>See also <a HREF="https://scholar.google.co.uk/citations?user=kI-EJYEAAAAJ">Google Scholar</a>.</p>
-
-                <p>Closed publisher links are <span class="nf">pink</span>. Links to open access publications and preprints are <span class="free">green</span>.</p>
-
-                <h3 id="books">Books</h3>
-                <ul class="vert">
+<p>My research is at the intersection of technology and global regulation, bridging political science, law, and media studies. I'm conceptually most interested in the politics and institutions that shape public/private governance in the platformized digital economy, with a focus on social networks and AI systems. Empirically, I mainly do qualitative work, with a focus on textual, archival, and interview-based forms of policy tracing and analysis. I collaborate most actively with legal scholars and computer scientists, but also work happily with historians, communications researchers, political economists, and STS scholars.</p>
+<p>I received my doctorate from the <a href="https://www.politics.ox.ac.uk/">Department of Politics and International Relations</a> at the University of Oxford, where my dissertation recieved the Winchester Prize. I previously studied at the <a href="https://www.oii.ox.ac.uk/">Oxford Internet Institute</a> and the <a href="https://ir.arts.ubc.ca/">University of British Columbia</a>, and have conducted research at the <a href="https://reutersinstitute.politics.ox.ac.uk/">Reuters Institute</a> and <a href="https://www.sant.ox.ac.uk/european-studies/european-studies-centre/">European Studies Centre</a> in Oxford as well as the <a href="https://www.mcgill.ca/maxbellschool/">Max Bell School of Public Policy</a> at McGill. I have held fellowships or other visiting positions at the Center for Democracy and Technology (<a href="https://cdt.org/">CDT</a>) in DC, USC's <a href="https://annenberg.usc.edu/">Annenberg School for Communication and Journalism</a>, Stanford's <a href="https://pacscenter.stanford.edu/person/robert-gorwa/">Center for Philanthropy and Civil Society</a>, and the <a href="https://www.weizenbaum-institut.de/portrait/p/robert-gorwa/">Weizenbaum Institute</a> in Berlin. </p>
+<p>My first book, <a href="book.html"><i>The Politics of Platform Regulation</i></a>, a comparative empirical study of the development of 'online safety' frameworks in the transnational context, was  published open access in 2024 by Oxford University Press. My second book, <a href="https://homepages.ucl.ac.uk/~ucqnmve/badcomputers/"><i>Bad Computers</i></a>, an investigation of the logics of governance in the AI stack, is a collaboration with the law and technology scholar Michael Veale and is forthcoming with MIT Press. I co-founded the Platform Governance Research Network (<a href="https://platgov.net">PlatGovNet</a>) and organize a <a href="https://wzb.eu/en/events/seminar-series/platform-politics-and-policy">regular research seminar</a> in Berlin on digital policy issues.</p>
+</p>
+      </section>
+      <section class="publications" aria-labelledby="publications">
         
-        <li>
-                <strong>Bad Computers: How the Wider AI Stack Can Stop the Worst AI Misuse</strong>. <br>
-		Michael Veale and Robert Gorwa, Forthcoming, MIT Press, 2027.<br>
-        <a class="buttan free" href="https://homepages.ucl.ac.uk/~ucqnmve/badcomputers/">Preprint</a>
-        </li>
-
-
-        <li>
-                <strong>The Politics of Platform Regulation: How Governments Shape Online Content Moderation</strong>. <br>
-		Robert Gorwa, 2024.<br>
-        <a class="buttan free" href="https://global.oup.com/academic/product/the-politics-of-platform-regulation-9780197692868?prevNumResPerPage=20&prevSortField=1&sortField=8&resultsPerPage=20&start=0&lang=en&cc=us#">Oxford University Press</a>
-        <a class="buttan free" href="https://academic.oup.com/book/56385">PDF</a>
-        </li>
-
-        </ul>
-
-        <h3 id="articles">Articles</h3>
-        <ul class="vert">
-
-        <li>
-                <strong>The Great Sysop: Elon Musk, X, and the Emergence of Platform Illiberalism</strong>. <br>
-                 João C. Magalhães, Clara Iglesias Keller, and Robert Gorwa, 2026<br>
-             <a class="buttan free" href="https://journals.sagepub.com/doi/10.1177/14614448261424889">New Media & Society</a>     
-            <a class="buttan free" href="https://osf.io/preprints/socarxiv/6grbc_v2">SocArXiv</a>
-		</li>    
-            
-            <li>
-                <strong>Moderating Model Marketplaces: Platform Governance Puzzles for AI Intermediaries</strong>. <br>
-                Robert Gorwa and Michael Veale, 2024<br>
-            <a class="buttan free" href="https://www.tandfonline.com/doi/full/10.1080/17579961.2024.2388914">Law, Innovation and Technology</a>
-            <a class="buttan free" href="https://osf.io/preprints/socarxiv/6dfk3">SocArXiv</a>
-		</li>
-
-        <li>
-            <strong>Platform Lobbying: Policy Influence Strategies and the EU's Digital Services Act</strong>. <br>
-            Robert Gorwa, Grzegorz Lechowski, Daniel Schneiß, 2024<br>
-        <a class="buttan free" href="https://policyreview.info/articles/analysis/platform-lobbying-digital-services-act">Internet Policy Review</a>
-    </li>
-
-        <li>
-                <strong>AI and Global Governance: Modalities, Rationales, Tensions</strong>. <br>
-                Michael Veale, Kira Matus, and Robert Gorwa, 2023<br>
-            <a class="buttan free" href="https://www.annualreviews.org/doi/10.1146/annurev-lawsocsci-020223-040749">Annual Review of Law and Social Science</a>
-		</li>
-
-        <li>
-                <strong>Who are the Stakeholders in Platform Governance?</strong><br>
-		Robert Gorwa, 2022<br>
-            <a class="buttan free" href="https://yjolt.org/who-are-stakeholders-platform-governance">Yale Journal of Law & Technology</a>
-		</li>
-
-		<li>
-                <strong> Elections, Institutions, and the Regulatory Politics of Platform Governance: The Case of the German NetzDG</strong>. <br>
-		Robert Gorwa, 2021<br>
-        <a class="buttan nf" href="https://www.sciencedirect.com/science/article/abs/pii/S0308596121000495">Telecommunications Policy</a><br>
-            <a class="buttan free" href="https://osf.io/preprints/socarxiv/2exrw/">SocArXiv</a>
-		</li>
-
-		<li>
-                <strong>Algorithmic Content Moderation: Technical and Political Challenges in the Automation of Platform Governance</strong>. <br>
-                Robert Gorwa, Reuben Binns, and Christian Katzenbach, 2020<br>
-            <a class="buttan free" href="https://journals.sagepub.com/doi/full/10.1177/2053951719897945">Big Data & Society</a>
-		</li>
-
-		<li>
-                <strong> The Platform Governance Triangle: Conceptualising the Informal Regulation of Online Content</strong>. <br>
-		Robert Gorwa, 2019<br>
-			<a class="buttan free" href="https://policyreview.info/articles/analysis/platform-governance-triangle-conceptualising-informal-regulation-online-content">Internet Policy Review</a>
-		</li>
-
-        <li>
-        <strong>What is Platform Governance?</strong><br>
-		Robert Gorwa, 2019<br>
-            <a class="buttan nf" href="https://www.tandfonline.com/doi/full/10.1080/1369118X.2019.1573914">Information, Communication & Society</a><br>
-        	<a class="buttan free" href="https://osf.io/preprints/socarxiv/fbu27/">SocArXiv</a>
-		</li>
-
-        <li>
-        <strong>Unpacking the Social Media Bot: A Typology to Guide Research and Policy</strong><br>
-		Robert Gorwa and Douglas Guilbeault, 2018<br>
-            <a class="buttan nf" href="https://onlinelibrary.wiley.com/doi/full/10.1002/poi3.184">Policy & Internet</a><br>
-        	<a class="buttan free" href="https://arxiv.org/abs/1801.06863v2">ArXiv</a>
-		</li>
-
-
-    </ul>
-
+ <div class="col-md-8" style="height: 120vh;"> 
+<h2 id="publications">Publications</h2>
+<p>See also <a href="https://scholar.google.co.uk/citations?user=kI-EJYEAAAAJ">Google Scholar</a>.</p>
+<p>Closed publisher links are pink. Links to open access publications and preprints are green.</p>
+<div class="publication-filters" role="group" aria-label="Filter publications">
+  <button type="button" class="publication-filter is-active" data-filter="all" aria-pressed="true">All publications</button>
+  <button type="button" class="publication-filter" data-filter="latest" aria-pressed="false">Latest</button>
+</div>
+<section id="latest-publications" class="latest-publications" aria-label="Latest publications" hidden>
+  <h3>Latest publications</h3>
+  <ul class="vert" id="latest-publications-list"></ul>
+</section>
+<h3 id="books">Books</h3>
+<ul class="vert">
+<li data-year="2027" data-month="00">
+<strong>Bad Computers: How the Wider AI Stack Can Stop the Worst AI Misuse</strong>. <br/>
+		Michael Veale and Robert Gorwa, Forthcoming, MIT Press, 2027.<br/>
+<a class="buttan free" href="https://homepages.ucl.ac.uk/~ucqnmve/badcomputers/">Preprint</a>
+</li>
+<li data-year="2024" data-month="06">
+<strong>The Politics of Platform Regulation: How Governments Shape Online Content Moderation</strong>. <br/>
+		Robert Gorwa, 2024.<br/>
+<a class="buttan free" href="https://global.oup.com/academic/product/the-politics-of-platform-regulation-9780197692868?prevNumResPerPage=20&amp;prevSortField=1&amp;sortField=8&amp;resultsPerPage=20&amp;start=0&amp;lang=en&amp;cc=us#">Oxford University Press</a>
+<a class="buttan free" href="https://academic.oup.com/book/56385">PDF</a>
+</li>
+</ul>
+<h3 id="articles">Articles</h3>
+<ul class="vert">
+<li data-year="2026" data-month="03">
+<strong>The Great Sysop: Elon Musk, X, and the Emergence of Platform Illiberalism</strong>. <br/>
+                 João C. Magalhães, Clara Iglesias Keller, and Robert Gorwa, 2026<br/>
+<a class="buttan free" href="https://journals.sagepub.com/doi/10.1177/14614448261424889">New Media &amp; Society</a>
+<a class="buttan free" href="https://osf.io/preprints/socarxiv/6grbc_v2">SocArXiv</a>
+</li>
+<li data-year="2024" data-month="09">
+<strong>Moderating Model Marketplaces: Platform Governance Puzzles for AI Intermediaries</strong>. <br/>
+                Robert Gorwa and Michael Veale, 2024<br/>
+<a class="buttan free" href="https://www.tandfonline.com/doi/full/10.1080/17579961.2024.2388914">Law, Innovation and Technology</a>
+<a class="buttan free" href="https://osf.io/preprints/socarxiv/6dfk3">SocArXiv</a>
+</li>
+<li data-year="2024" data-month="05">
+<strong>Platform Lobbying: Policy Influence Strategies and the EU's Digital Services Act</strong>. <br/>
+            Robert Gorwa, Grzegorz Lechowski, Daniel Schneiß, 2024<br/>
+<a class="buttan free" href="https://policyreview.info/articles/analysis/platform-lobbying-digital-services-act">Internet Policy Review</a>
+</li>
+<li data-year="2023" data-month="00">
+<strong>AI and Global Governance: Modalities, Rationales, Tensions</strong>. <br/>
+                Michael Veale, Kira Matus, and Robert Gorwa, 2023<br/>
+<a class="buttan free" href="https://www.annualreviews.org/doi/10.1146/annurev-lawsocsci-020223-040749">Annual Review of Law and Social Science</a>
+</li>
+<li data-year="2022" data-month="00">
+<strong>Who are the Stakeholders in Platform Governance?</strong><br/>
+		Robert Gorwa, 2022<br/>
+<a class="buttan free" href="https://yjolt.org/who-are-stakeholders-platform-governance">Yale Journal of Law &amp; Technology</a>
+</li>
+<li data-year="2021" data-month="00">
+<strong> Elections, Institutions, and the Regulatory Politics of Platform Governance: The Case of the German NetzDG</strong>. <br/>
+		Robert Gorwa, 2021<br/>
+<a class="buttan nf" href="https://www.sciencedirect.com/science/article/abs/pii/S0308596121000495">Telecommunications Policy</a><br/>
+<a class="buttan free" href="https://osf.io/preprints/socarxiv/2exrw/">SocArXiv</a>
+</li>
+<li data-year="2020" data-month="00">
+<strong>Algorithmic Content Moderation: Technical and Political Challenges in the Automation of Platform Governance</strong>. <br/>
+                Robert Gorwa, Reuben Binns, and Christian Katzenbach, 2020<br/>
+<a class="buttan free" href="https://journals.sagepub.com/doi/full/10.1177/2053951719897945">Big Data &amp; Society</a>
+</li>
+<li data-year="2019" data-month="00">
+<strong> The Platform Governance Triangle: Conceptualising the Informal Regulation of Online Content</strong>. <br/>
+		Robert Gorwa, 2019<br/>
+<a class="buttan free" href="https://policyreview.info/articles/analysis/platform-governance-triangle-conceptualising-informal-regulation-online-content">Internet Policy Review</a>
+</li>
+<li data-year="2019" data-month="00">
+<strong>What is Platform Governance?</strong><br/>
+		Robert Gorwa, 2019<br/>
+<a class="buttan nf" href="https://www.tandfonline.com/doi/full/10.1080/1369118X.2019.1573914">Information, Communication &amp; Society</a><br/>
+<a class="buttan free" href="https://osf.io/preprints/socarxiv/fbu27/">SocArXiv</a>
+</li>
+<li data-year="2018" data-month="00">
+<strong>Unpacking the Social Media Bot: A Typology to Guide Research and Policy</strong><br/>
+		Robert Gorwa and Douglas Guilbeault, 2018<br/>
+<a class="buttan nf" href="https://onlinelibrary.wiley.com/doi/full/10.1002/poi3.184">Policy &amp; Internet</a><br/>
+<a class="buttan free" href="https://arxiv.org/abs/1801.06863v2">ArXiv</a>
+</li>
+</ul>
 <h3 id="chapters">Chapters</h3>
 <ul class="vert">
-
-    <li>
-        <strong> Democratic Transparency in the Platform Society</strong><br>
-        Robert Gorwa and Timothy Garton Ash, 2020<br>
-        In <i>Social Media and Democracy: The State of the Field and Prospects for Reform</i><br>
-            <a class="buttan free" href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E79E2BBF03C18C3A56A5CC393698F117/9781108835558AR.pdf/Social_Media_and_Democracy.pdf?event-type=FTLA#%FE%FF%00B%00K%00C%00N%00-%00b%00p%00-%001%002">Cambridge University Press</a><br>
-		</li>
-
-        <li>
-        <strong>  Big Tech Hits the Diplomatic Circuit: Norm Entrepreneurship, Policy Advocacy, and Microsoft's Cybersecurity Tech Accord</strong><br>
-        Robert Gorwa and Anton Peez, 2020<br>
-        In <i>Governing Cyberspace: Behavior, Power, and Diplomacy</i><br>
-            <a class="buttan free" href="https://rowman.com/WebDocs/Open_Access_Governing_Cyberspace_Broeders_and_van_den_Berg.pdf#RL_14_BRVDB_C013_docbook_new_indd.indd%3A0.70562744140625%3A1340">Rowman & Littlefield</a><br>
-		</li>
-
-        <li>
-            <strong>  Prayer-Bots and Religious Worship on Twitter: A Call for a Wider Research Agenda</strong><br>
-            Carl Ohman, Robert Gorwa, and Luciano Floridi, 2019<br>
-            In <i> Ethics, Governance, and Policies in Artificial Intelligence </i><br>
-                <a class="buttan nf" href="https://link.springer.com/book/10.1007/978-3-030-81907-1">Springer</a><br>
-                <a class="buttan free" href="https://link.springer.com/article/10.1007/s11023-019-09498-3">Minds & Machines</a><br>
-            </li>
-
-        <li>
-        <strong> Poland: Unpacking the Ecosystem of Social Media Manipulation</strong><br>
-        Robert Gorwa, 2018<br>
-        In <i>Computational Propaganda: Parties, Politicians, and Manipulation on Social Media</i><br>
-            <a class="buttan nf" href="https://global.oup.com/academic/product/computational-propaganda-9780190931414?lang=en&cc=us#">Oxford University Press</a><br>
-		</li>
-
-    </ul>
-
-    <h3 id="reviews">Reviews</h3>
+<li data-year="2020" data-month="00">
+<strong> Democratic Transparency in the Platform Society</strong><br/>
+        Robert Gorwa and Timothy Garton Ash, 2020<br/>
+        In <i>Social Media and Democracy: The State of the Field and Prospects for Reform</i><br/>
+<a class="buttan free" href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E79E2BBF03C18C3A56A5CC393698F117/9781108835558AR.pdf/Social_Media_and_Democracy.pdf?event-type=FTLA#%FE%FF%00B%00K%00C%00N%00-%00b%00p%00-%001%002">Cambridge University Press</a><br/>
+</li>
+<li data-year="2020" data-month="00">
+<strong>  Big Tech Hits the Diplomatic Circuit: Norm Entrepreneurship, Policy Advocacy, and Microsoft's Cybersecurity Tech Accord</strong><br/>
+        Robert Gorwa and Anton Peez, 2020<br/>
+        In <i>Governing Cyberspace: Behavior, Power, and Diplomacy</i><br/>
+<a class="buttan free" href="https://rowman.com/WebDocs/Open_Access_Governing_Cyberspace_Broeders_and_van_den_Berg.pdf#RL_14_BRVDB_C013_docbook_new_indd.indd%3A0.70562744140625%3A1340">Rowman &amp; Littlefield</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>  Prayer-Bots and Religious Worship on Twitter: A Call for a Wider Research Agenda</strong><br/>
+            Carl Ohman, Robert Gorwa, and Luciano Floridi, 2019<br/>
+            In <i> Ethics, Governance, and Policies in Artificial Intelligence </i><br/>
+<a class="buttan nf" href="https://link.springer.com/book/10.1007/978-3-030-81907-1">Springer</a><br/>
+<a class="buttan free" href="https://link.springer.com/article/10.1007/s11023-019-09498-3">Minds &amp; Machines</a><br/>
+</li>
+<li data-year="2018" data-month="00">
+<strong> Poland: Unpacking the Ecosystem of Social Media Manipulation</strong><br/>
+        Robert Gorwa, 2018<br/>
+        In <i>Computational Propaganda: Parties, Politicians, and Manipulation on Social Media</i><br/>
+<a class="buttan nf" href="https://global.oup.com/academic/product/computational-propaganda-9780190931414?lang=en&amp;cc=us#">Oxford University Press</a><br/>
+</li>
+</ul>
+<h3 id="reviews">Reviews</h3>
 <ul class="vert">
-
-         <li>
-        <strong> Can Platforms Be Democratic?</strong><br>
-        On Schneider's <i>Governable Spaces</i> and Gowder's <i>Networked Leviathan</i>, 2024<br>
-        <a class="buttan free" href="https://jacobin.com/2024/12/internet-democracy-musk-zuckerberg-profits">Jacobin</a><br>
-    </li>
-
-        <li>
-        <strong> Digital Oligarchy</strong><br>
-        On Jillian York's <i>Silicon Values</i>, 2022<br>
-            <a class="buttan free" href="https://lareviewofbooks.org/article/digital-oligarchy">LA Review of Books</a><br>
-		</li>
-
-        <li>
-        <strong>How We Can Socialize Big Tech</strong><br>
-        On James Muldoon's <i>Platform Socialism</i>, 2022<br>
-            <a class="buttan free" href="https://jacobin.com/2022/06/big-tech-facebook-meta-airbnb-socialize-platforms">Jacobin</a><br>
-		</li>
-
-        <li>
-        <strong>The Last of the Unicorns</strong><br>
-        On Siva Vaidhyanathan's <i>Anti-Social Media</i>, 2019<br>
-            <a class="buttan free" href="https://lareviewofbooks.org/article/the-last-of-the-unicorns-facebook-and-the-fight-for-a-better-future/">LA Review of Books</a><br>
-		</li>
-
-        <li>
-        <strong>Platform Moderation and its Discontents</strong><br>
-        On Tarleton Gillespie's <i>Custodians of the Internet</i>, 2018<br>
-            <a class="buttan free" href="https://lareviewofbooks.org/article/platform-moderation-and-its-discontents/">LA Review of Books</a><br>
-		</li>
-
-
-    </ul>
-
-    
-    <h3 id="reports">Reports</h3>
+<li data-year="2024" data-month="12">
+<strong> Can Platforms Be Democratic?</strong><br/>
+        On Schneider's <i>Governable Spaces</i> and Gowder's <i>Networked Leviathan</i>, 2024<br/>
+<a class="buttan free" href="https://jacobin.com/2024/12/internet-democracy-musk-zuckerberg-profits">Jacobin</a><br/>
+</li>
+<li data-year="2022" data-month="00">
+<strong> Digital Oligarchy</strong><br/>
+        On Jillian York's <i>Silicon Values</i>, 2022<br/>
+<a class="buttan free" href="https://lareviewofbooks.org/article/digital-oligarchy">LA Review of Books</a><br/>
+</li>
+<li data-year="2022" data-month="00">
+<strong>How We Can Socialize Big Tech</strong><br/>
+        On James Muldoon's <i>Platform Socialism</i>, 2022<br/>
+<a class="buttan free" href="https://jacobin.com/2022/06/big-tech-facebook-meta-airbnb-socialize-platforms">Jacobin</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>The Last of the Unicorns</strong><br/>
+        On Siva Vaidhyanathan's <i>Anti-Social Media</i>, 2019<br/>
+<a class="buttan free" href="https://lareviewofbooks.org/article/the-last-of-the-unicorns-facebook-and-the-fight-for-a-better-future/">LA Review of Books</a><br/>
+</li>
+<li data-year="2018" data-month="00">
+<strong>Platform Moderation and its Discontents</strong><br/>
+        On Tarleton Gillespie's <i>Custodians of the Internet</i>, 2018<br/>
+<a class="buttan free" href="https://lareviewofbooks.org/article/platform-moderation-and-its-discontents/">LA Review of Books</a><br/>
+</li>
+</ul>
+<h3 id="reports">Reports</h3>
 <ul class="vert">
-
-    <li>
-        <strong> Real Time Threats: Analysing Trust and Safety Practices for Child Sexual Exploitation and Abuse (CSEA) Prevention on Livestreaming Platforms</strong><br>
-        Robert Gorwa and Dhanaraj Thakur, 2024<br>
-            <a class="buttan free" href="https://cdt.org/insights/real-time-threats-analysis-of-trust-and-safety-practices-for-child-sexual-exploitation-and-abuse-csea-prevention-on-livestreaming-platforms/">Center for Democracy and Technology</a><br>
-		</li>
-
-    <li>
-        <strong> What Can Be Done? Digital Media Policy Options for Strengthening European Democracy</strong><br>
-        Rasmus Kleis Nielsen, Robert Gorwa, and Madeleine de Cock Buning, 2019<br>
-            <a class="buttan free" href="https://reutersinstitute.politics.ox.ac.uk/our-research/what-can-be-done-digital-media-policy-options-europe-and-beyond">Reuters Institute for the Study of Journalism</a><br>
-		</li>
-
-        <li>
-        <strong>Lessons In Resilience: Canada's Digital Media Ecosystem and the 2019 Election</strong><br>
-        Taylor Owen, Aengus Bridgeman, Robert Gorwa et al., 2019<br>
-            <a class="buttan free" href="https://ppforum.ca/articles/lessons-in-resilience-canadas-digital-media-ecosystem-and-the-2019-election/">Public Policy Forum</a><br>
-		</li>
-
-        <li>
-        <strong>Glasnost: Nine Ways that Facebook Could Make Itself a Better Forum for Free Speech and Democracy</strong><br>
-        Timothy Garton Ash, Robert Gorwa, and Danae Metaxa, 2019<br>
-            <a class="buttan free" href="https://reutersinstitute.politics.ox.ac.uk/our-research/glasnost-nine-ways-facebook-can-make-itself-better-forum-free-speech-and-democracy">Reuters Institute for the Study of Journalism</a><br>
-		</li>
-
-    </ul>
-
-    <h3 id="commentaries">Commentaries</h3>
+<li data-year="2024" data-month="11">
+<strong> Real Time Threats: Analysing Trust and Safety Practices for Child Sexual Exploitation and Abuse (CSEA) Prevention on Livestreaming Platforms</strong><br/>
+        Robert Gorwa and Dhanaraj Thakur, 2024<br/>
+<a class="buttan free" href="https://cdt.org/insights/real-time-threats-analysis-of-trust-and-safety-practices-for-child-sexual-exploitation-and-abuse-csea-prevention-on-livestreaming-platforms/">Center for Democracy and Technology</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong> What Can Be Done? Digital Media Policy Options for Strengthening European Democracy</strong><br/>
+        Rasmus Kleis Nielsen, Robert Gorwa, and Madeleine de Cock Buning, 2019<br/>
+<a class="buttan free" href="https://reutersinstitute.politics.ox.ac.uk/our-research/what-can-be-done-digital-media-policy-options-europe-and-beyond">Reuters Institute for the Study of Journalism</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>Lessons In Resilience: Canada's Digital Media Ecosystem and the 2019 Election</strong><br/>
+        Taylor Owen, Aengus Bridgeman, Robert Gorwa et al., 2019<br/>
+<a class="buttan free" href="https://ppforum.ca/articles/lessons-in-resilience-canadas-digital-media-ecosystem-and-the-2019-election/">Public Policy Forum</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>Glasnost: Nine Ways that Facebook Could Make Itself a Better Forum for Free Speech and Democracy</strong><br/>
+        Timothy Garton Ash, Robert Gorwa, and Danae Metaxa, 2019<br/>
+<a class="buttan free" href="https://reutersinstitute.politics.ox.ac.uk/our-research/glasnost-nine-ways-facebook-can-make-itself-better-forum-free-speech-and-democracy">Reuters Institute for the Study of Journalism</a><br/>
+</li>
+</ul>
+<h3 id="commentaries">Commentaries</h3>
 <ul class="vert">
+<li data-year="2026" data-month="11">
+<strong> Brazil Shows Platform Illiberalism is Big Tech’s New Normal </strong><br/>
+<i>If platform infrastructures cannot be regarded as neutral spaces to be studied, but as tools being wielded strategically by their politically motivated owners, where does that leave us?</i><br/>
+        Clara Iglesias Keller, Robert Gorwa, and João C. Magalhães, 2026.<br/>
+<a class="buttan free" href="https://www.techpolicy.press/brazil-shows-platform-illiberalism-is-big-techs-new-normal/">Tech Policy Press</a><br/>
+</li>
+<li data-year="2025" data-month="12">
+<strong> The Informal Future of Digital Governance </strong><br/>
+<i>Short video essay for the SSRC on transnational coordinating mechanisms for hard digital governance issues, touching on the C2PA, GIFCT, and more.</i><br/>
+        Robert Gorwa, 2025<br/>
+<a class="buttan free" href="https://mediawell.ssrc.org/articles/the-informal-future-of-digital-governance-video-essay-series//">Mediawell</a><br/>
+</li>
+<li data-year="2024" data-month="09">
+<strong> Durov's Arrest and the Shadow Politics of Platform Regulation</strong><br/>
+<i>A summary of my book's arguments and a look at some of the actors and interests driving the recent battle between French law enfocement and Telegram.</i><br/>
+        Robert Gorwa, 2024<br/>
+<a class="buttan free" href="https://www.techpolicy.press/durovs-arrest-and-the-shadow-politics-of-platform-regulation/">Tech Policy Press</a><br/>
+</li>
+<li data-year="2024" data-month="00">
+<strong> Political Capital and Informal Platform Governance</strong><br/>
+<i>Blog post in symposium on 'jawboning' and informal forms of platform-state interactions. </i><br/>
+            Robert Gorwa, 2024<br/>
+<a class="buttan free" href="https://observatoriolegislativocele.com/political-capital-and-informal-platform-governance/">Center for Studies on Freedom of Expression</a><br/>
+</li>
+<li data-year="2022" data-month="00">
+<strong> European Security Officials Double Down on Client-Side Scanning</strong><br/>
+<i>A few reflections on the transnational politics (and interest groups) driving EU draft CSAM proposals</i><br/>
+        Robert Gorwa, 2022<br/>
+<a class="buttan free" href="https://www.lawfareblog.com/european-security-officials-double-down-automated-moderation-and-client-side-scanning">Lawfare</a><br/>
+</li>
+<li data-year="2020" data-month="00">
+<strong>Expanding the Debate About Content Moderation</strong><br/>
+<i>A 'roundtable' piece with short inputs from a number of major names in the content moderation research space (honoured to be included!) </i><br/>
+        Tarleton Gillespie et al., 2020<br/>
+<a class="buttan free" href="https://policyreview.info/articles/analysis/expanding-debate-about-content-moderation-scholarly-research-agendas-coming-policy">Internet Policy Review</a><br/>
+</li>
+<li data-year="2020" data-month="00">
+<strong>As Platforms Rely Less on Human Content Moderators, What's at Stake?</strong><br/>
+<i>Short invited contribution reflecting on the news that major platforms were ramping up their use of automated content screening tools in the early days of the COVID-19 pandemic</i><br/>
+        Robert Gorwa, 2020<br/>
+<a class="buttan free" href="https://www.cigionline.org/articles/platforms-rely-less-human-content-moderators-whats-stake">Centre for International Governance Innovation</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>Regulating Platforms Softly</strong><br/>
+<i>An essay reflecting on informal and co-regulatory models for platform regulation; part of essay collection on 'Models for Platform Governance'</i><br/>
+        Robert Gorwa, 2019<br/>
+<a class="buttan free" href="https://www.cigionline.org/articles/regulating-them-softly">Centre for International Governance Innovation</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>Big Tech Hits the Diplomatic Circuit</strong><br/>
+<i>Summary of book chapter looking at the growing and unique role played by Microsoft in international digital policy - and their unique 'diplomatic' lobbying strategy</i><br/>
+        Robert Gorwa and Anton Peez, 2019<br/>
+<a class="buttan free" href="https://berlinpolicyjournal.com/big-tech-hits-the-diplomatic-circuit/">Berlin Policy Journal</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>What Policymakers Can Do For Europe's Digital Media Ecosystem</strong><br/>
+<i>Summary of RISJ report looking at sustainable media policy suggestions for the von Der Leyen Commission</i><br/>
+        Rasmus Kleis Nielsen, Madeleine de Cock Buning, and Robert Gorwa, 2019<br/>
+<a class="buttan free" href="https://theconversation.com/here-is-what-policymakers-can-do-for-europes-news-media-127768">The Conversation</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>The Shifting Definition of Platform Governance</strong><br/>
+<i>Invited contribution with some general reflections on how to understand and define 'platform governance' - both as a field of research and as a terrain of political struggle</i><br/>
+        Robert Gorwa, 2019<br/>
+<a class="buttan free" href="https://www.cigionline.org/articles/shifting-definition-platform-governance">Centre for International Governance Innovation</a><br/>
+</li>
+<li data-year="2019" data-month="00">
+<strong>How Mark Zuckerberg Could Save Facebook From Itself</strong><br/>
+<i>Op-ed with summary takeaways from RISJ 'Glasnost' report looking at the slow increase in Facebook's community standards-related transparency in 2018-2019</i><br/>
+        Robert Gorwa and Danae Metaxa, 2019<br/>
+<a class="buttan free" href="https://www.wired.co.uk/article/how-to-fix-facebook">WIRED</a><br/>
+</li>
+<li data-year="2018" data-month="00">
+<strong>Facebook's Decency Conundrum</strong><br/>
+<i>Print mag piece with some thoughts on the challenges of moderating borderline content (like 'art')</i><br/>
+        Robert Gorwa, 2018<br/>
+<a class="buttan free" href="https://www.wired.co.uk/article/facebook-moderation-art-nudity-origin-of-the-world">WIRED</a><br/>
+</li>
+<li data-year="2017" data-month="00">
+<strong>Twitter has a Bot Problem, and Wikipedia Might Have the Solution</strong><br/>
+<i>Op-ed looking at Wikipedia's bot classification and reporting system, and comparing that to Twitter's decision to privilige developer access over content moderation </i><br/>
+            Robert Gorwa, 2017<br/>
+<a class="buttan free" href="https://qz.com/1108092/twitter-has-a-serious-bot-problem-and-wikipedia-might-have-the-solution">Quartz</a><br/>
+</li>
+<li data-year="2017" data-month="00">
+<strong>Tinder Nightmares</strong><br/>
+<i>Op-ed applying some reflections from our Policy &amp; Internet article on bots to an interesting (and potentially problematic) use of automated Tinder bots for electioneering in the UK </i><br/>
+        Robert Gorwa and Douglas Guilbeault, 2017<br/>
+<a class="buttan free" href="https://www.wired.co.uk/article/tinder-political-bots-jeremy-corbyn-labour">WIRED</a><br/>
+</li>
+<li data-year="2016" data-month="00">
+<strong>Quantum Leap</strong><br/>
+<i>Essay discussing developments in quantum computing (and quantum resistant cryptography), and its potential implications for geopolitics </i><br/>
+        Taylor Owen and Robert Gorwa, 2016<br/>
+<a class="buttan nf" href="https://www.foreignaffairs.com/articles/2016-09-07/quantum-leap">Foreign Affairs</a><br/>
+</li>
+</ul>
 
-   <li>
-        <strong> Brazil Shows Platform Illiberalism is Big Tech’s New Normal </strong><br>
-        <i>If platform infrastructures cannot be regarded as neutral spaces to be studied, but as tools being wielded strategically by their politically motivated owners, where does that leave us?</i><br>
-        Clara Iglesias Keller, Robert Gorwa, and João C. Magalhães, 2026.<br>
-            <a class="buttan free" href="https://www.techpolicy.press/brazil-shows-platform-illiberalism-is-big-techs-new-normal/">Tech Policy Press</a><br>
-		</li>
+      </section>
+    </main>
+  </div>
 
+<script>
+(function () {
+  const publicationSection = document.querySelector('.publications');
+  if (!publicationSection) return;
 
-        <li>
-        <strong> The Informal Future of Digital Governance </strong><br>
-        <i>Short video essay for the SSRC on transnational coordinating mechanisms for hard digital governance issues, touching on the C2PA, GIFCT, and more.</i><br>
-        Robert Gorwa, 2025<br>
-            <a class="buttan free" href="https://mediawell.ssrc.org/articles/the-informal-future-of-digital-governance-video-essay-series//">Mediawell</a><br>
-		</li>
+  const buttons = publicationSection.querySelectorAll('.publication-filter');
+  const latestSection = publicationSection.querySelector('#latest-publications');
+  const latestList = publicationSection.querySelector('#latest-publications-list');
+  const originalLists = Array.from(publicationSection.querySelectorAll('ul.vert')).filter(list => list !== latestList);
+  const categoryHeadings = Array.from(publicationSection.querySelectorAll('h3')).filter(heading => !heading.closest('#latest-publications'));
+  const entries = originalLists.flatMap(list => Array.from(list.querySelectorAll(':scope > li')));
 
+  // data-month uses 01–12; 00 means the month has not yet been specified.
+  const latestEntries = entries.slice().sort((a, b) => {
+    const yearDifference = Number(b.dataset.year) - Number(a.dataset.year);
+    if (yearDifference) return yearDifference;
+    const monthDifference = Number(b.dataset.month || 0) - Number(a.dataset.month || 0);
+    return monthDifference || entries.indexOf(a) - entries.indexOf(b);
+  }).slice(0, 10);
 
-    <li>
-        <strong> Durov's Arrest and the Shadow Politics of Platform Regulation</strong><br>
-        <i>A summary of my book's arguments and a look at some of the actors and interests driving the recent battle between French law enfocement and Telegram.</i><br>
-        Robert Gorwa, 2024<br>
-            <a class="buttan free" href="https://www.techpolicy.press/durovs-arrest-and-the-shadow-politics-of-platform-regulation/">Tech Policy Press</a><br>
-		</li>
+  latestEntries.forEach(entry => latestList.appendChild(entry.cloneNode(true)));
 
-        <li>
-            <strong> Political Capital and Informal Platform Governance</strong><br>
-            <i>Blog post in symposium on 'jawboning' and informal forms of platform-state interactions. </i><br>
-            Robert Gorwa, 2024<br>
-                <a class="buttan free" href="https://observatoriolegislativocele.com/political-capital-and-informal-platform-governance/">Center for Studies on Freedom of Expression</a><br>
-            </li>
-    
-    
-    <li>
-        <strong> European Security Officials Double Down on Client-Side Scanning</strong><br>
-        <i>A few reflections on the transnational politics (and interest groups) driving EU draft CSAM proposals</i><br>
-        Robert Gorwa, 2022<br>
-            <a class="buttan free" href="https://www.lawfareblog.com/european-security-officials-double-down-automated-moderation-and-client-side-scanning">Lawfare</a><br>
-		</li>
+  function setFilter(filter) {
+    const showLatest = filter === 'latest';
+    originalLists.forEach(list => { list.hidden = showLatest; });
+    categoryHeadings.forEach(heading => { heading.hidden = showLatest; });
+    latestSection.hidden = !showLatest;
+    buttons.forEach(button => {
+      const active = button.dataset.filter === filter;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+  }
 
-        <li>
-        <strong>Expanding the Debate About Content Moderation</strong><br>
-        <i>A 'roundtable' piece with short inputs from a number of major names in the content moderation research space (honoured to be included!) </i><br>
-        Tarleton Gillespie et al., 2020<br>
-            <a class="buttan free" href="https://policyreview.info/articles/analysis/expanding-debate-about-content-moderation-scholarly-research-agendas-coming-policy">Internet Policy Review</a><br>
-		</li>
+  buttons.forEach(button => {
+    button.addEventListener('click', () => setFilter(button.dataset.filter));
+  });
+})();
+</script>
 
-        <li>
-        <strong>As Platforms Rely Less on Human Content Moderators, What's at Stake?</strong><br>
-        <i>Short invited contribution reflecting on the news that major platforms were ramping up their use of automated content screening tools in the early days of the COVID-19 pandemic</i><br>
-        Robert Gorwa, 2020<br>
-            <a class="buttan free" href="https://www.cigionline.org/articles/platforms-rely-less-human-content-moderators-whats-stake">Centre for International Governance Innovation</a><br>
-		</li>
-        
-        <li>
-        <strong>Regulating Platforms Softly</strong><br>
-        <i>An essay reflecting on informal and co-regulatory models for platform regulation; part of essay collection on 'Models for Platform Governance'</i><br>
-        Robert Gorwa, 2019<br>
-            <a class="buttan free" href="https://www.cigionline.org/articles/regulating-them-softly">Centre for International Governance Innovation</a><br>
-		</li>
-
-        <li>
-        <strong>Big Tech Hits the Diplomatic Circuit</strong><br>
-        <i>Summary of book chapter looking at the growing and unique role played by Microsoft in international digital policy - and their unique 'diplomatic' lobbying strategy</i><br>
-        Robert Gorwa and Anton Peez, 2019<br>
-            <a class="buttan free" href="https://berlinpolicyjournal.com/big-tech-hits-the-diplomatic-circuit/">Berlin Policy Journal</a><br>
-		</li>
-
-        <li>
-        <strong>What Policymakers Can Do For Europe's Digital Media Ecosystem</strong><br>
-        <i>Summary of RISJ report looking at sustainable media policy suggestions for the von Der Leyen Commission</i><br>
-        Rasmus Kleis Nielsen, Madeleine de Cock Buning, and Robert Gorwa, 2019<br>
-            <a class="buttan free" href="https://theconversation.com/here-is-what-policymakers-can-do-for-europes-news-media-127768">The Conversation</a><br>
-		</li>
-
-        <li>
-        <strong>The Shifting Definition of Platform Governance</strong><br>
-        <i>Invited contribution with some general reflections on how to understand and define 'platform governance' - both as a field of research and as a terrain of political struggle</i><br>
-        Robert Gorwa, 2019<br>
-            <a class="buttan free" href="https://www.cigionline.org/articles/shifting-definition-platform-governance">Centre for International Governance Innovation</a><br>
-		</li>
-
-        <li>
-        <strong>How Mark Zuckerberg Could Save Facebook From Itself</strong><br>
-        <i>Op-ed with summary takeaways from RISJ 'Glasnost' report looking at the slow increase in Facebook's community standards-related transparency in 2018-2019</i><br>
-        Robert Gorwa and Danae Metaxa, 2019<br>
-            <a class="buttan free" href="https://www.wired.co.uk/article/how-to-fix-facebook">WIRED</a><br>
-		</li>
-
-        <li>
-        <strong>Facebook's Decency Conundrum</strong><br>
-        <i>Print mag piece with some thoughts on the challenges of moderating borderline content (like 'art')</i><br>
-        Robert Gorwa, 2018<br>
-            <a class="buttan free" href="https://www.wired.co.uk/article/facebook-moderation-art-nudity-origin-of-the-world">WIRED</a><br>
-		</li>
-
-        <li>
-            <strong>Twitter has a Bot Problem, and Wikipedia Might Have the Solution</strong><br>
-            <i>Op-ed looking at Wikipedia's bot classification and reporting system, and comparing that to Twitter's decision to privilige developer access over content moderation </i><br>
-            Robert Gorwa, 2017<br>
-                <a class="buttan free" href="https://qz.com/1108092/twitter-has-a-serious-bot-problem-and-wikipedia-might-have-the-solution">Quartz</a><br>
-            </li>
-
-        <li>
-        <strong>Tinder Nightmares</strong><br>
-        <i>Op-ed applying some reflections from our Policy & Internet article on bots to an interesting (and potentially problematic) use of automated Tinder bots for electioneering in the UK </i><br>
-        Robert Gorwa and Douglas Guilbeault, 2017<br>
-            <a class="buttan free" href="https://www.wired.co.uk/article/tinder-political-bots-jeremy-corbyn-labour">WIRED</a><br>
-		</li>
-
-
-        <li>
-        <strong>Quantum Leap</strong><br>
-        <i>Essay discussing developments in quantum computing (and quantum resistant cryptography), and its potential implications for geopolitics </i><br>
-        Taylor Owen and Robert Gorwa, 2016<br>
-            <a class="buttan nf" href="https://www.foreignaffairs.com/articles/2016-09-07/quantum-leap">Foreign Affairs</a><br>
-		</li>
-
-
-
-    </ul>
-
-
-</div>
-
-
-
+</body>
 </html>
